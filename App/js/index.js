@@ -1,7 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "../css/style.css";
+import App from "./App";
+import {BrowserRouter} from "react-router-dom";
+
 
 ReactDOM.render(
-    <h1>Hello World</h1>
-    ,document.querySelector("#app")
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>
+    , document.querySelector("#app")
 )
