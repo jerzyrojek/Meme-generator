@@ -9,7 +9,7 @@ const SingleMeme = ({templates, onClick}) => {
             margin: "auto",
             marginTop: 50,
             display: "block",
-            boxShadow: "10 0 10 black"
+            boxShadow: "0 0 10px black"
         }}
              key={templates.id}
              alt={templates.name}

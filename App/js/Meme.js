@@ -14,6 +14,7 @@ const Meme = () => {
 
     return (
         <>
+            <h1 style={{textAlign:"center"}}>Choose a meme by clicking on it</h1>
             {chosenTemplate && <SingleMeme templates={chosenTemplate}/>}
             {!chosenTemplate && memeTemplates.map((memeTemplate) => {
                 return (
