@@ -8,3 +8,24 @@
     margin: 0 auto;
     max-width: 1080px;
 }
+
+body{
+    background:lightcyan;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    display: block;
+    width: 20rem;
+    padding: 1rem;
+    margin: 1rem auto;
+    background-color: lightblue;
+}
+
+input {
+    display: block;
+    padding: 1rem;
+    width: 20rem;
+    margin: 1rem auto;
+}
