@@ -8,6 +8,37 @@ const Meme = () => {
     const [chosenMemeIndex, setChosenMemeIndex] = useState(0);
     const [captions, setCaptions] = useState([]);
 
+    const updateCaption = (e, i) => {
+        const input = e.target.value || "";
+        setCaptions(
+            captions.map((caption, index) => {
+                if (i === index) {
+                    return input;
+                } else {
+                    return caption;
+                }
+            })
+        )
+    }
+
+    const generateMeme = () => {
+        const currentMeme = memeTemplates[chosenMemeIndex];
+        const formData = new FormData();
+        formData.append("username", "memesreactapp");
+        formData.append("password", "gh9TTbnPN#^f72yF");
+        formData.append("template_id", currentMeme.id);
+        captions.forEach((caption, index) => formData.append(`boxes[${index}][text]`, caption))
+
+        fetch("https://api.imgflip.com/caption_image", {
+            method: "POST",
+            body: formData
+        }).then(response => {
+            response.json().then(response => {
+                console.log(response);
+            })
+        })
+    };
+
     useEffect(() => {
         fetch("https://api.imgflip.com/get_memes").then(response => response.json().then(response => {
             const memeEmptyTemplates = response.data.memes;
@@ -29,15 +60,16 @@ const Meme = () => {
             <>
                 <SingleMeme templates={chosenTemplate}/>
                 {
-                        captions.map((caption, i) => (
-                            <input key={i}/>
-                        ))
+                    captions.map((caption, i) => (
+                        <input onChange={(e) => updateCaption(e, i)} key={i}/>
+                    ))
                 }
-                <button onClick={() => (console.log("klik"))}>Generate</button>
+                <button onClick={generateMeme}>Generate</button>
                 <button onClick={() => {
                     setChosenTemplate(null);
                 }
-                }>Back</button>
+                }>Back
+                </button>
             </>
             }
 
