@@ -23,6 +23,16 @@ button {
     background-color: lightblue;
 }
 
+img {
+    border: 1px solid black;
+    max-width: 500px;
+    max-height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    display: block;
+    box-shadow: 0 0 10px black;
+}
+
 input {
     display: block;
     padding: 1rem;

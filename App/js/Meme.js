@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from "react";
 import SingleMeme from "./SingleMeme";
-
+import { useHistory } from "react-router-dom";
 
 const Meme = () => {
     const [memeTemplates, setMemeTemplates] = useState([]);
     const [chosenTemplate, setChosenTemplate] = useState(null);
     const [chosenMemeIndex, setChosenMemeIndex] = useState(0);
     const [captions, setCaptions] = useState([]);
+
+    const history = useHistory();
 
     const updateCaption = (e, i) => {
         const input = e.target.value || "";
@@ -34,7 +36,7 @@ const Meme = () => {
             body: formData
         }).then(response => {
             response.json().then(response => {
-                console.log(response);
+                history.push(`/generated?url=${response.data.url}`)
             })
         })
     };
