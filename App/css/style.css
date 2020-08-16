@@ -3,15 +3,16 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-.container {
-    margin: 0 auto;
-    max-width: 1080px;
-}
-
 body{
-    background:lightcyan;
+    color:white;
+    background: url("../assets/background.jpg") no-repeat fixed center/cover;
 }
+
+h1 {
+    text-align:center;
+    margin-top:1rem;
+}
+
 
 button {
     cursor: pointer;
@@ -24,11 +25,10 @@ button {
 }
 
 img {
-    border: 1px solid black;
+    border: 1px solid lightgrey;
     max-width: 500px;
     max-height: 500px;
-    margin: auto;
-    margin-top: 50px;
+    margin: 50px auto auto;
     display: block;
     box-shadow: 0 0 10px black;
 }

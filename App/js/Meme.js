@@ -57,7 +57,7 @@ const Meme = () => {
 
     return (
         <>
-            <h1 style={{textAlign: "center"}}>Choose a meme by clicking on it</h1>
+            {!chosenTemplate ? <h1>Choose a meme by clicking on it</h1> : <h1>Create your meme</h1>}
             {chosenTemplate &&
             <>
                 <SingleMeme templates={chosenTemplate}/>
