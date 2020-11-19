@@ -19,6 +19,7 @@ button {
     border: none;
     display: block;
     width: 20rem;
+    max-width: 90%;
     padding: 1rem;
     margin: 1rem auto;
     background-color: lightblue;
@@ -26,8 +27,9 @@ button {
 
 img {
     border: 1px solid lightgrey;
-    max-width: 500px;
-    max-height: 500px;
+    width:500px;
+    max-width: 90%;
+    object-fit: contain;
     margin: 50px auto auto;
     display: block;
     box-shadow: 0 0 10px black;
@@ -37,5 +39,6 @@ input {
     display: block;
     padding: 1rem;
     width: 20rem;
+    max-width: 90%;
     margin: 1rem auto;
 }
