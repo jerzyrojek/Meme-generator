@@ -4,13 +4,15 @@ const Html = require('html-webpack-plugin');
 
 const entryPath = "App";
 const entryFile = "index.js";
+const publicPath = "/Meme-generator/";
 
 
 module.exports = {
     entry: `./${entryPath}/js/${entryFile}`,
     output: {
         filename: "out.js",
-        path: path.resolve(__dirname, `${entryPath}/build`)
+        path: path.resolve(__dirname, `${entryPath}/build`),
+        publicPath: publicPath,
     },
     devServer: {
         contentBase: path.join(__dirname, `${entryPath}`),
@@ -21,7 +23,6 @@ module.exports = {
     },
     mode: "development",
     devtool: "source-map",
-    watch: true,
     module: {
         rules: [
             {
@@ -56,7 +57,7 @@ module.exports = {
                 loader: "file-loader",
                 options: {
                     name: "[name].[ext]",
-                    publicPath: "/assets/",
+                    publicPath: publicPath + "assets/",
                     outputPath: "/assets/"
                 }
             }

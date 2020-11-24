@@ -6,7 +6,7 @@ import {BrowserRouter} from "react-router-dom";
 
 
 ReactDOM.render(
-    <BrowserRouter>
+    <BrowserRouter basename="/Meme-generator">
         <App/>
     </BrowserRouter>
     , document.querySelector("#app")
